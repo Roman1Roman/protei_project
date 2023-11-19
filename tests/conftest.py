@@ -48,9 +48,9 @@ def browser_manage(request):
         options=options
     )
     browser.config.driver = driver
-    browser.config.window_width = 1100
-    browser.config.window_height = 2300
-    browser.config.base_url = 'https://demoqa.com'
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
+    browser.config.base_url = 'https://protei.ru'
 
     yield browser
 
