@@ -47,7 +47,7 @@ allure serve tests/allure-results
 1. Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/protei_project">проект</a>
 2. Нажать "Build with Parameters"
 3. Из списка "ENVIRONMENT" выбрать: PROD
-4. В поле "BROWSER_VERSION" ввести предпочитаемую версию браузера
+4. В поле "BROWSER_VERSION" ввести предпочитаемую версию браузера (99 или 100)
 5. Нажать "Build"
 
 ----
