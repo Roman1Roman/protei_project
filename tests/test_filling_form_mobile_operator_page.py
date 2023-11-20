@@ -3,11 +3,11 @@ import allure
 main_page = MainPage()
 mob_oper_page = MobileOperators()
 
-@allure.title('Filling an application on mobile operators page')
+@allure.title('Filling an application on mobile operators page starting from main page')
 @allure.tag('Frontend')
-def test_filling_table_mob_oper_page(browser_manage):
-    with allure.step('Opening main page'):
-        main_page.open_main_page()
+def test_filling_table_mob_oper_page():
+    #with allure.step('Opening main page'):
+        #main_page.open_main_page()
 
     with allure.step('Move to mobile operator page'):
         mob_oper_page.open_mobile_operator_page()

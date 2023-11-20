@@ -2,9 +2,9 @@ import os
 
 import pytest
 from dotenv import load_dotenv
+from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selene.support.shared import browser
 
 from utils import attach
 
@@ -22,11 +22,6 @@ def load_env():
 
 
 @pytest.fixture(scope='session', autouse=True)
-def load_env():
-    load_dotenv()
-
-
-@pytest.fixture(scope='function')
 def browser_manage(request):
     browser_version = request.config.getoption('--browser_version')
     browser_version = browser_version if browser_version != "" else os.getenv('DEFAULT_BROWSER_VERSION')
@@ -50,7 +45,7 @@ def browser_manage(request):
     browser.config.driver = driver
     browser.config.window_width = 1920
     browser.config.window_height = 1080
-    browser.config.base_url = 'https://protei.ru'
+    browser.open('https://protei.ru/')
 
     yield browser
 
@@ -60,3 +55,8 @@ def browser_manage(request):
     attach.add_video(browser)
 
     browser.quit()
+
+
+@pytest.fixture(scope='function', autouse=True)
+def main_page():
+    browser.open('https://protei.ru/')

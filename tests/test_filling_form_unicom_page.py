@@ -3,11 +3,11 @@ import allure
 main_page = MainPage()
 unicom_page = UnicomPage()
 
-@allure.title('Filling an application on unicom page')
+@allure.title('Filling an application on unicom page starting from main page')
 @allure.tag('Frontend')
-def test_filling_table_mob_oper_page(browser_manage):
-    with allure.step('Opening main page'):
-        main_page.open_main_page()
+def test_filling_table_mob_oper_page():
+    #with allure.step('Opening main page'):
+        #main_page.open_main_page()
     with allure.step('Move to unicom page'):
         unicom_page.open_unicom_page()
     with allure.step('Click on create an application button'):
